@@ -22,16 +22,14 @@
   position: relative;
 }
 
-.carousel .carousel-item {
-  display: none;
-}
-
+.carousel .carousel-item,
 .carousel .carousel-item-hidden {
   display: none;
 }
 
 .carousel .carousel-item-visible {
   display: block;
+  animation: fadeVisibility 3s;
 }
 
 .carousel .carousel-item img {
@@ -66,4 +64,13 @@
 
 .carousel .carousel-actions button#carousel-button-next {
   margin-right: 20px;
+}
+
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

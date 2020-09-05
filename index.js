@@ -10,7 +10,6 @@ prevBtn.addEventListener('click', moveToPrevSlide)
 nextBtn.addEventListener('click', moveToNextSlide)
 
 function hideAllSlides() {
-  console.log('hide!')
   for (const slide of slides) {
     slide.classList.remove('carousel-item-visible')
     slide.classList.add('carousel-item-hidden')
