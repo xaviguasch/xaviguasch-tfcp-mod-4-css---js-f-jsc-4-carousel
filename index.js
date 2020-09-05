@@ -12,23 +12,26 @@ nextBtn.addEventListener('click', moveToNextSlide)
 function moveToPrevSlide() {
   if (slidePosition === 0) {
     slidePosition = 2
-    slides[0].classList.remove('carousel-item-visible')
-    slides[slidePosition].classList.add('carousel-item-visible')
   } else if (slidePosition <= totalSlides - 1) {
     slidePosition--
-    slides[slidePosition + 1].classList.remove('carousel-item-visible')
-    slides[slidePosition].classList.add('carousel-item-visible')
   }
+  for (const slide of slides) {
+    slide.classList.add('carousel-item-hidden')
+  }
+
+  slides[slidePosition].classList.add('carousel-item-visible')
 }
 
 function moveToNextSlide() {
   if (slidePosition < totalSlides - 1) {
     slidePosition++
-    slides[slidePosition - 1].classList.remove('carousel-item-visible')
-    slides[slidePosition].classList.add('carousel-item-visible')
   } else if (slidePosition === totalSlides - 1) {
     slidePosition = 0
-    slides[totalSlides - 1].classList.remove('carousel-item-visible')
-    slides[slidePosition].classList.add('carousel-item-visible')
   }
+
+  for (const slide of slides) {
+    slide.classList.add('carousel-item-hidden')
+  }
+
+  slides[slidePosition].classList.add('carousel-item-visible')
 }
