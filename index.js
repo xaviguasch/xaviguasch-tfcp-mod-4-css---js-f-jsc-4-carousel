@@ -9,28 +9,30 @@ const nextBtn = document.getElementById('carousel-button-next')
 prevBtn.addEventListener('click', moveToPrevSlide)
 nextBtn.addEventListener('click', moveToNextSlide)
 
+function hideAllSlides() {
+  console.log('hide!')
+  for (const slide of slides) {
+    slide.classList.remove('carousel-item-visible')
+    slide.classList.add('carousel-item-hidden')
+  }
+}
+
 function moveToPrevSlide() {
+  hideAllSlides()
   if (slidePosition === 0) {
     slidePosition = 2
   } else if (slidePosition <= totalSlides - 1) {
     slidePosition--
   }
-  for (const slide of slides) {
-    slide.classList.add('carousel-item-hidden')
-  }
-
   slides[slidePosition].classList.add('carousel-item-visible')
 }
 
 function moveToNextSlide() {
+  hideAllSlides()
   if (slidePosition < totalSlides - 1) {
     slidePosition++
   } else if (slidePosition === totalSlides - 1) {
     slidePosition = 0
-  }
-
-  for (const slide of slides) {
-    slide.classList.add('carousel-item-hidden')
   }
 
   slides[slidePosition].classList.add('carousel-item-visible')

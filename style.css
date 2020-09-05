@@ -26,6 +26,10 @@
   display: none;
 }
 
+.carousel .carousel-item-hidden {
+  display: none;
+}
+
 .carousel .carousel-item-visible {
   display: block;
 }
@@ -34,10 +38,6 @@
   width: 100%;
   max-width: 600px;
   height: auto;
-}
-
-.carousel-item-hidden {
-  display: none;
 }
 
 .carousel .carousel-actions {
